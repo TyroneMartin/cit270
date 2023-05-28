@@ -1,2 +1,5 @@
 login.json
 info.md
+node_modules
+server.cert
+server.key

@@ -3,15 +3,19 @@ const bodyParser = require('body-parser')
 const Redis = require ('redis');
 const app=express();
 const { createHash } =  require('node:crypto')
+const fs = require('fs')
+const https = require('https')
+const app = express ();
+
 const port = 3000;
 const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});
 
 app.use(bodyParser.json ());//allow json (Javascript object Notation) requests
 
-app.listen(port, ()=> {
-    redisClient.connect();
-console.log("listening on port: " + port)
-});
+// app.listen(port, ()=> {
+//     redisClient.connect();
+// console.log("listening on port: " + port)
+// });
 
 app.get("/", (req, res) => {
     res.send("Welcome to your Node Server")
