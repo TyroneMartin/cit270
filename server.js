@@ -6,6 +6,12 @@ const { createHash } =  require('node:crypto')
 const fs = require('fs')
 const https = require('https')
 const app = express ();
+//..
+https.createServer((
+    key: fs.readFileSync('privkey1.pem'), //This is a private key 
+    cert: fs.readFileSync('cert1.pem'),
+    chain:fs.readFileSync('fullchain1.pem')//This is a self-signed ceriticated.
+))
 
 const port = 3000;
 const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});

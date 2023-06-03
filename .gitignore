@@ -3,3 +3,12 @@ info.md
 node_modules
 server.cert
 server.key
+*.htlm
+*.pem
+
+
+
+
+
+
+
