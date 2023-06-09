@@ -5,13 +5,12 @@ const app=express();
 const { createHash } =  require('node:crypto')
 const fs = require('fs')
 const https = require('https')
-const app = express ();
 //..
-https.createServer((
+https.createServer({
     key: fs.readFileSync('privkey1.pem'), //This is a private key 
     cert: fs.readFileSync('cert1.pem'),
     chain:fs.readFileSync('fullchain1.pem')//This is a self-signed ceriticated.
-))
+})
 
 const port = 3000;
 const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});
@@ -26,7 +25,10 @@ app.use(bodyParser.json ());//allow json (Javascript object Notation) requests
 app.get("/", (req, res) => {
     res.send("Welcome to your Node Server")
     // res.resirect ("https:google.com")
-})
+}, app).listen(3000, () => {
+    redisClient.connect();    
+    console.log('Listening...')
+});
 
 app.post('/login', async (req, res) => {
     const loginBody =req.body;
