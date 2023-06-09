@@ -5,6 +5,10 @@ server.cert
 server.key
 *.htlm
 *.pem
+package-lock.json
+keys/
+node_modules/
+
 
 
 
