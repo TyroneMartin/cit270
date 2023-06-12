@@ -12,7 +12,7 @@ https.createServer({
     chain:fs.readFileSync('/etc/letsencrypt/archive/tyronemartin.cit270.com/fullchain1.pem')//This is a self-signed ceriticated.
 })
 
-const port = 3000;
+const port = 443;
 const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});
 
 app.use(bodyParser.json ());//allow json (Javascript object Notation) requests
@@ -25,7 +25,7 @@ app.use(bodyParser.json ());//allow json (Javascript object Notation) requests
 app.get("/", (req, res) => {
     res.send("Welcome to your Node Server")
     // res.resirect ("https:google.com")
-}, app).listen(3000, () => {
+}, app).listen(port, () => {
     redisClient.connect();    
     console.log('Listening...')
 });
