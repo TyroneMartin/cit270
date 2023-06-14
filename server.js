@@ -9,7 +9,7 @@ const https = require('https')
 https.createServer({
     key: fs.readFileSync('/etc/letsencrypt/archive/tyronemartin.cit270.com/privkey1.pem'), //This is a private key 
     cert: fs.readFileSync('/etc/letsencrypt/archive/tyronemartin.cit270.com/cert1.pem'),
-    chain:fs.readFileSync('/etc/letsencrypt/archive/tyronemartin.cit270.com/fullchain1.pem')//This is a self-signed ceriticated.
+    ca:fs.readFileSync('/etc/letsencrypt/archive/tyronemartin.cit270.com/chain1.pem')//This is a self-signed ceriticated.
 })
 
 const port = 443;
@@ -25,6 +25,7 @@ app.use(bodyParser.json ());//allow json (Javascript object Notation) requests
 app.get("/", (req, res) => {
     res.send("Welcome to your Node Server")
     // res.resirect ("https:google.com")
+    // no longer use port 3000, but 443 for secure server
 }, app).listen(port, () => {
     redisClient.connect();    
     console.log('Listening...')
