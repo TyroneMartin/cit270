@@ -1,8 +1,9 @@
 FROM node:alpine
+WORKDIR /usr/app
 
-COPY package.json ./
+COPY package.json /usr/app
 
-COPY server.js ./
+COPY server.js /usr/app
 
 # installs the current package
 RUN rpm installs
