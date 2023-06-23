@@ -6,7 +6,7 @@ COPY package.json /usr/app
 COPY server.js /usr/app
 
 # installs the current package
-RUN rpm installs
+RUN npm installs
 
 EXPOSE 3000
 
