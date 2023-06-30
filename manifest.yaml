@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
 # name of container      
-      -nane: cit270tyroneservice
+      -name: cit270tyroneservice
 # Docker image registry      
         image:    us-docker.pkg.dev/captain-americas-big-hat/tyrone-token-api/image:latest
 # First part of the command to start our API          
