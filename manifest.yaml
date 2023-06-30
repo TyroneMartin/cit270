@@ -24,24 +24,24 @@ spec:
 # name of container      
       - name: cit270tyroneservice
 # Docker image registry      
-      image:    us-docker.pkg.dev/captain-americas-big-hat/tyrone-token-api/image:latest
+        image:    us-docker.pkg.dev/captain-americas-big-hat/tyrone-token-api/image:latest
 # First part of the command to start our API          
-      command: ["npm"]
+        command: ["npm"]
 # Parameters to add to the command        
-      args: ["run","start"]
+        args: ["run","start"]
 # Resources for the pod
-      resources:
-        requests:
+        resources:
+          requests:
 # How many cores to start with        
-          cpu: 0.125
+            cpu: 0.125
 # How much memory to start             
-          memory: 500Mi
-        limits:
+            memory: 500Mi
+          limits:
 # How many cores to limit to          
-          cpu: 0.125
+            cpu: 0.125
 # Max memory for the pod            
-          memory: 600Mi
-      imagePullPolicy: Always
+            memory: 600Mi
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
