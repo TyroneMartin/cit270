@@ -1,6 +1,6 @@
 echo "Logging in"
 
-curl --insecure -v -d "@login.json" POST -H "Content-Type:application/json" https://tyronemartin.cit270.com/
+curl --insecure -v -d "@login.json" POST -H "Content-Type:application/json" https://tyronemartin.cit270.com/login
 @REM  curl --insecure -v -d "@login.json" POST -H "Content-Type:application/json" http://localhost:3000/login
 
 @REM  curl -v -d "@login.json" POST -H "Content-Type:application/json" https://dev.stedi.me/login
