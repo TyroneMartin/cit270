@@ -24,7 +24,7 @@ spec:
 # name of container      
       - name: cit270tyroneservice
 # Docker image registry      
-        image:    us-docker.pkg.dev/captain-americas-big-hat/tyrone-token-api/image:latest
+        image: us-docker.pkg.dev/captain-americas-big-hat/tyrone-token-api/image:latest
 # First part of the command to start our API          
         command: ["npm"]
 # Parameters to add to the command        

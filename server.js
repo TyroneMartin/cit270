@@ -17,7 +17,15 @@ const https = require('https')
 
 // const port = 443;
 const port = 3000;
-const redisClient = Redis.createClient({url:'redis://127.0.0.1:6379'});
+const redisClient = Redis.createClient({
+    socket: {
+        host: 'redis-stedi-tyrone',
+        port: '6379'
+    }
+});
+// ({url:'redis://deault:Passw0r@redis-stedi-tyrone:6379'});
+
+
 
 app.use(bodyParser.json ());//allow json (Javascript object Notation) requests
 
@@ -31,9 +39,6 @@ app.get("/", (req, res) => {
     res.send("Welcome to your Node Server")
     // res.resirect ("https:google.com")
     // no longer use port 3000, but 443 for secure server
-}, app).listen(port, () => {
-    redisClient.connect();    
-    console.log('Listening...')
 });
 
 app.post('/login', async (req, res) => {
